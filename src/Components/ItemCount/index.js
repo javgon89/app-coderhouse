@@ -23,14 +23,21 @@ const ItemCount =({initial,stock}) =>{
                     <p className="counterTitle">Agregar producto al carrito</p>
                     <div className="counter">                    
                         <Tooltip title="Quitar producto">
-                            <Button type="primary" shape="circle" onClick={()=> setCounter(counter -1)} className="itemStyle">-</Button>
+                            <Button type="primary" 
+                                    shape="circle" 
+                                    onClick={()=> setCounter(counter -1)} 
+                                    className="itemStyle"
+                                    style={counter===initial ? {background:"#e4e4e4", border:"#bbbbbb", color:"#bbbbbb"}:{}}>-</Button>
                         </Tooltip>
 
                             <p className="numberStyle">{counter}</p>
                         
 
-                        <Tooltip title="Agregar producto">
-                            <Button type="primary" shape="circle" onClick={() => setCounter(counter +1)} className="itemStyle">+</Button>
+                        <Tooltip title={counter===stock ? "No hay más unidades disponibles" : "Agregar producto al carrito"}>
+                            <Button type="primary" 
+                                    shape="circle" 
+                                    onClick={() => setCounter(counter +1)} 
+                                    className="itemStyle" style={counter===stock ? {background:"#e4e4e4", border:"#bbbbbb", color:"#bbbbbb"}:{}}>+</Button>
                         </Tooltip>
                     </div>
                     <p className="avUnits">Unidades disponibles: {stock}</p>
