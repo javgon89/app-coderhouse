@@ -1,0 +1,41 @@
+.addProduct{
+    background-color: #ffffff;
+    padding: 25px 40px ;
+    border-radius: 10px;
+}
+
+.counterTitle{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.counter{
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;    
+    margin:5px;
+    
+}
+
+
+.itemStyle{
+    margin: 12px 8px;
+}
+
+.numberStyle{
+    margin:10px;
+    width:100px;
+    border: solid 1px #e4e4e4;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 4px 0;
+    
+}
+
+.avUnits{
+    color:#bbbbbb;
+    font-size: 13px;
+}
+
