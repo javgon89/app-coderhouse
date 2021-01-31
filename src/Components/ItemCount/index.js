@@ -7,15 +7,24 @@ const ItemCount =({initial,stock}) =>{
     const [counter, setCounter] = useState(initial)
 
 
+    const sumarProducto = () => {
+        setCounter(counter + 1)
+      };
+
+    const quitarProducto = () => {
+        setCounter(counter - 1)
+    };   
+      
 
    if(counter===0){
        setCounter(counter + 1)        
     }    
 
-    if(counter===stock+1){
+    if(counter>stock){
             setCounter(counter - 1)        
-        }
+    }
 
+    console.log(counter)
 
     return(
         <>      
@@ -25,9 +34,10 @@ const ItemCount =({initial,stock}) =>{
                         <Tooltip title="Quitar producto">
                             <Button type="primary" 
                                     shape="circle" 
-                                    onClick={()=> setCounter(counter -1)} 
+                                    onClick={quitarProducto} 
                                     className="itemStyle"
-                                    style={counter===initial ? {background:"#e4e4e4", border:"#bbbbbb", color:"#bbbbbb"}:{}}>-</Button>
+                                    style={counter===initial ? {background:"#e4e4e4", border:"#bbbbbb", color:"#bbbbbb"}:{}}>-
+                            </Button>
                         </Tooltip>
 
                             <p className="numberStyle">{counter}</p>
@@ -36,8 +46,9 @@ const ItemCount =({initial,stock}) =>{
                         <Tooltip title={counter===stock ? "No hay más unidades disponibles" : "Agregar producto al carrito"}>
                             <Button type="primary" 
                                     shape="circle" 
-                                    onClick={() => setCounter(counter +1)} 
-                                    className="itemStyle" style={counter===stock ? {background:"#e4e4e4", border:"#bbbbbb", color:"#bbbbbb"}:{}}>+</Button>
+                                    onClick={sumarProducto} 
+                                    className="itemStyle" style={counter===stock ? {background:"#e4e4e4", border:"#bbbbbb", color:"#bbbbbb"}:{}}>+
+                            </Button>
                         </Tooltip>
                     </div>
                     <p className="avUnits">Unidades disponibles: {stock}</p>
