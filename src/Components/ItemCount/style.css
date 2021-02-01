@@ -39,3 +39,9 @@
     font-size: 13px;
 }
 
+.unableButton{
+    margin: 12px 8px;
+    background:#e4e4e4;
+    border:#bbbbbb;
+    color:#bbbbbb
+}
