@@ -6,22 +6,17 @@ const ItemCount =({initial,stock}) =>{
 
     const [counter, setCounter] = useState(initial)
 
-    const sumarProducto=()=>{
-        return counter<stock ? setCounter(counter+1) : null
-    }
+    const sumarProducto=()=>{counter<stock && setCounter(counter+1)}
 
-    const quitarProducto=()=>{
-        return counter>initial ? setCounter(counter-1) : null
-    }
-    
-    console.log(counter)
+    const quitarProducto=()=>{counter>initial && setCounter(counter-1)}
+
 
     return(
         <>      
             <div className="addProduct">        
                 <p className="counterTitle">Agregar producto al carrito</p>
                 <div className="counter">                    
-                    <Tooltip title="Quitar producto">
+                    <Tooltip title={counter>initial ? "Quitar producto":null}>
                         <Button type="primary" 
                                 shape="circle" 
                                 onClick={quitarProducto} 
