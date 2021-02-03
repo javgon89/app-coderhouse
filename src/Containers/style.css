@@ -1,4 +1,9 @@
-.customFont{
-    color: #ffffff !important;
-    font-weight: 700 !important;
+.customFont{    
+    font-weight: 700 !important;    
+    margin:20px ;
+
+}
+
+.loading{
+    margin-top: 25%;
 }

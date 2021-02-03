@@ -13,7 +13,7 @@ const ItemCount =({initial,stock}) =>{
 
     return(
         <>      
-            <div className="addProduct">        
+            <div className="mainStyle">        
                 <p className="counterTitle">Agregar producto al carrito</p>
                 <div className="counter">                    
                     <Tooltip title={counter>initial ? "Quitar producto":null}>

@@ -1,0 +1,15 @@
+.productCard{   
+    border: solid 1px rgb(226, 226, 226);
+    border-radius: 15px;
+    padding-bottom:15px
+}
+
+.productsImg{
+    border-radius: 15px 15px 0 0;
+    width:100%;
+    border-bottom:solid 1px rgb(226, 226, 226);
+}
+
+.ProductData{
+    margin-top: 10px;
+}

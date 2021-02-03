@@ -13,9 +13,8 @@ const App=()=> {
     <div className="App">
       
       <NavBar/>
-        <div className="App-header">
-          <ItemListContainer greeting="Bienvenidos a JavCommerce"/>        
-        </div>
+      <ItemListContainer greeting="Bienvenidos a JavCommerce"/>        
+       
     </div>
   );
 }

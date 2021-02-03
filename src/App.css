@@ -22,8 +22,7 @@ body{
   }
 }
 
-.App-header {
-  background-color: #209db6;
+.App-header { 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
