@@ -35,7 +35,7 @@ const ItemDetailContainer =()=>{
             {loading ? (
             <>
                 <Spin indicator={antIcon} className='loading' />
-                <p>Cargando productos</p>
+                <p>Cargando producto</p>
             </>
             ) : (
 
