@@ -11,6 +11,10 @@ body{
   text-align: center;
 }
 
+h1,h2{
+  font-weight: 700 !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -58,5 +62,14 @@ body{
 }
 
 .mainButton{
+  margin-top: 10px;
   border-radius: 7px !important;
+}
+
+.mainMargin{
+  margin: 30px;
+}
+
+.textLeft{
+  text-align: left;
 }

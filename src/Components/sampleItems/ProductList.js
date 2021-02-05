@@ -1,5 +1,5 @@
 const ProductList=[
-    {id:0, title:"Zapatillas Nike SB 1", price:"$5.000", stock:12, image:"images/nike.jpg"},
+    {id:0, title:"Zapatillas Nike SB 1", price:"$5.000", stock:12, image:"images/nike.jpg", description:"Las Nike SB Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento."},
     {id:1, title:"Zapatillas Nike SB 2", price:"$6.000", stock:13, image:"images/nike-2.jpg"},
     {id:2, title:"Zapatillas Vans 1", price:"$9.000", stock:11, image:"images/vans.jpg"},
     {id:3, title:"Zapatillas Vans 2", price:"$8.500", stock:10, image:"images/vans-2.jpg"},
@@ -13,3 +13,6 @@ const ProductList=[
     ]
 
 export default ProductList
+
+
+

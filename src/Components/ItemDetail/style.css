@@ -1,0 +1,19 @@
+img{
+  
+    width: 100%;
+    border-radius:15px;    
+    border: solid 1px rgb(226, 226, 226);
+
+}
+
+.detailsContainer{
+    padding: 20px;       
+}
+
+.mainItemDetail{
+    padding: 30px 30px 20px 30px ;
+    margin:30px;
+    border-radius:25px;    
+    border: solid 1px rgb(226, 226, 226);
+}
+

@@ -14,7 +14,8 @@ const ItemCount =({initial,stock}) =>{
     return(
         <>      
             <div className="mainStyle">        
-                <p className="counterTitle">Agregar producto al carrito</p>
+                <p className="counterTitle">Stock disponible</p>
+                <p className="avUnits">{stock} Unidades</p>
                 <div className="counter">                    
                     <Tooltip title={counter>initial ? "Quitar producto":null}>
                         <Button type="primary" 
@@ -37,7 +38,7 @@ const ItemCount =({initial,stock}) =>{
                         </Button>
                     </Tooltip>
                 </div>
-                <p className="avUnits">Unidades disponibles: {stock}</p>
+                
                 <Button type="primary" className="mainButton">+ Agregar al carrito</Button>
             </div>
         </>

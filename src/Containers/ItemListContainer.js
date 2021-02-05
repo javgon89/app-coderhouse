@@ -47,8 +47,7 @@ const ItemListContainer =({greeting})=>{
         <>
             <Title className="customFont">{greeting}</Title>
             <ItemCount initial={1} stock={5} />
-            <ItemList products={products} />
-            
+            <ItemList products={products} />          
         </>
     )
 

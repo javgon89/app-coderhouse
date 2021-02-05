@@ -1,9 +1,5 @@
 .mainStyle{
-    background-color: #ffffff;
-    padding: 25px 40px ;
-    border: solid 1px rgb(226, 226, 226);
-    border-radius: 15px; 
-    margin: 20px;   
+    margin-top:30px
 }
 
 .counterTitle{
