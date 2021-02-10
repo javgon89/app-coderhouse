@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import { Button, Tooltip } from 'antd';
+import { Button, Tooltip} from 'antd';
 import './style.css';
 
 const ItemCount =({initial,stock}) =>{
@@ -13,9 +13,9 @@ const ItemCount =({initial,stock}) =>{
 
     return(
         <>      
+                   
             <div className="mainStyle">        
-                <p className="counterTitle">Stock disponible</p>
-                <p className="avUnits">{stock} Unidades</p>
+                <p className="counterTitle">Elegir cantidad:</p>                
                 <div className="counter">                    
                     <Tooltip title={counter>initial ? "Quitar producto":null}>
                         <Button type="primary" 
@@ -38,6 +38,7 @@ const ItemCount =({initial,stock}) =>{
                         </Button>
                     </Tooltip>
                 </div>
+                <p className="avUnits">{stock} Unidades disponibles</p>
                 
                 <Button type="primary" className="mainButton">+ Agregar al carrito</Button>
             </div>

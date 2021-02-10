@@ -1,22 +1,29 @@
 import { Menu,Dropdown} from 'antd';
 import {DownOutlined} from '@ant-design/icons';
+import{NavLink} from 'react-router-dom'
 
 const menu=(
         <Menu>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.google.com/">
-            Categoría A
-            </a>
+            <NavLink to={"/category/skate"} className="categoryStyle" activeClassName="selectedCategory">
+                Skate
+            </NavLink>
+          
         </Menu.Item>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.google.com/">
-            Categoría B
-            </a>
+            <NavLink to={"/category/urban"} className="categoryStyle" activeClassName="selectedCategory" >
+                Urban
+            </NavLink>
         </Menu.Item>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.google.com/">
-            Categoría C
-            </a>
+            <NavLink to={"/category/running"} className="categoryStyle" activeClassName="selectedCategory" >
+               Running
+            </NavLink>
+        </Menu.Item>
+        <Menu.Item>
+            <NavLink to={"/"} className="categoryStyle">
+                Todas
+            </NavLink>
         </Menu.Item>      
     </Menu>
     )

@@ -1,6 +1,7 @@
 import './style.css'
 import { Col } from 'antd';
 import {Button} from 'antd';
+import {Link} from 'react-router-dom';
 
 const Item =({products})=>{
     
@@ -13,9 +14,15 @@ const Item =({products})=>{
                     <div className="ProductData"> 
                     <p><b>{products.title}</b><br/>
                         {products.price}<br/>               
-                        Unidades disponibles:<b>{products.stock}</b>
+                        Unidades disponibles: <b>{products.stock}</b>
                     </p>
-                    <Button type="primary" className="mainButton">Ver producto</Button>
+                    
+                        <Link to={`/product/${products.id}`}>
+                            <Button type="primary" className="mainButton">Ver producto</Button>
+                        </Link>
+                            
+                        
+                    
                     </div>
                 </div>
             </Col>

@@ -1,7 +1,8 @@
 import { Layout, Menu} from 'antd';
 import './style.css';
 import CartWidget from './CartWidget';
-import CategoryDropdown from './CategoryDropdown'
+import CategoryDropdown from './CategoryDropdown';
+import {Link} from 'react-router-dom'
 
 
 const { Header} = Layout;
@@ -12,9 +13,13 @@ const NavBar = () =>{
         
     <>
         <Header>
-        <div className="logo" >
-            Jav Commerce
-        </div>    
+        
+
+                <Link to={'/'}>    
+                    <div className="logo" >
+                        Jav Commerce
+                    </div> 
+                </Link>  
             <Menu theme="dark" mode="horizontal">               
                 <Menu.Item key="3"><a href="https://www.google.com" target="blank" ><CartWidget/></a></Menu.Item>
                 <Menu.Item key="1" className="customMenu"> 
