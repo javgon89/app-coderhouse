@@ -1,53 +1,55 @@
 import {useState,useEffect} from 'react';
 import ItemDetail from '../Components/ItemDetail/index.js';
-import ProductList from '../Components/sampleItems/ProductList.js';
+import ProductList from '../sampleItems/ProductList.js';
 import { LoadingOutlined } from '@ant-design/icons';
 import {Spin } from 'antd';
 import {useParams} from 'react-router-dom';
-import './style.css';
+
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
-const ItemDetailContainer =()=>{   
-    
 
-        const [producto,setProducto] = useState([]);
-        const [loading, setLoading ] = useState(false);
-        const {productID} = useParams();
-    
-        useEffect (()=>{
+const getProductByID =(productoID)=>{
 
-            setLoading(true);
-            let productFound= ProductList.filter(producto=> {
-                if(producto.id.toString() === productID){
-                    return producto
-                }
-                 else {return null} 
-            })
-            console.log(productFound)
+        const foundProduct = ProductList.filter((product)=>
+            {
+             return   product.id.toString() === productoID             
+            }
+            
+        )
+      
 
-            const promesaProducto = new Promise ((resolve,reject)=>{
-                setTimeout(()=>{resolve(productFound[0])
-                },1000)
-            })        
-            promesaProducto.then(
-                (res)=>{setProducto(res);console.log(res)
-                setLoading(false)
-                }, 
-                           
-            )
-    
-        },[productID])
+        const promesaProducto = new Promise ((resolve,reject)=>{
+        setTimeout(()=>{ resolve(foundProduct[0]) },1000)
+        }        
+        )
+        return(promesaProducto)
+        
+    }
+
+const ItemDetailContainer =()=>{
+
+    const[producto,setProducto] = useState({});
+    const [loading,setLoading] = useState(false);
+    const {producteID} = useParams();
+
+    useEffect(() => {  
+        setLoading(true);  
+        getProductByID(producteID).then((res) => {  
+          setProducto(res);  
+          setLoading(false);  
+        });  
+      }, [producteID]);
 
 
     return(
 
         <>
             {loading ? (
-            <>
-                <Spin indicator={antIcon} className='loading' />
+             <div className="loading">
+                <Spin indicator={antIcon}/>
                 <p>Cargando producto</p>
-            </>
+            </div>
             ) : (
 
             <>

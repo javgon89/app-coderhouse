@@ -66,6 +66,15 @@ h1,h2{
   border-radius: 7px !important;
 }
 
+.goCart{
+  margin-top: 10px;
+  border-radius: 7px !important;
+  font-weight: 700 !important;
+  color: #009c82 !important;
+  background-color: #00ffd5 !important;
+  border-color: #00ffd5  !important;
+}
+
 .mainMargin{
   margin: 30px;
 }
@@ -74,3 +83,17 @@ h1,h2{
   text-align: left;
 }
 
+.customFont{    
+  font-weight: 700 !important;    
+  margin:20px 30px;
+
+}
+
+.loading{
+  text-align: center;
+  margin-top: 25%;
+}
+
+.backButton{
+  margin: 20px 0 0 30px;
+}

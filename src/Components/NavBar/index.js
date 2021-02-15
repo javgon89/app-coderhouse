@@ -21,7 +21,9 @@ const NavBar = () =>{
                     </div> 
                 </Link>  
             <Menu theme="dark" mode="horizontal">               
-                <Menu.Item key="3"><a href="https://www.google.com" target="blank" ><CartWidget/></a></Menu.Item>
+                <Menu.Item key="3">
+                    <Link to="/Cart"><CartWidget/></Link>
+                </Menu.Item>
                 <Menu.Item key="1" className="customMenu"> 
                     <CategoryDropdown/>
                 </Menu.Item>         

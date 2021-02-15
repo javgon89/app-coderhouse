@@ -1,24 +1,24 @@
-import Img1 from '../../img/nike.jpg';
-import Img2 from '../../img/nike-2.jpg';
-import Img3 from '../../img/vans.jpg';
-import Img4 from '../../img/vans-2.jpg';
-import Img5 from '../../img/fallen.jpg';
-import Img6 from '../../img/circa.jpg';
-import Img7 from '../../img/emerica.jpg';
-import Img8 from '../../img/etnies.jpg';
-import Img9 from '../../img/dc-1.jpg';
-import Img10 from '../../img/dc-2.jpg';
-import Img11 from '../../img/dc-3.jpg';
-import Img12 from '../../img/dc-4.jpg';
-import Img13 from '../../img/dc-5.jpg';
-import Img14 from '../../img/vans-3.jpg';
+import Img1 from '../img/nike.jpg';
+import Img2 from '../img/nike-2.jpg';
+import Img3 from '../img/vans.jpg';
+import Img4 from '../img/vans-2.jpg';
+import Img5 from '../img/fallen.jpg';
+import Img6 from '../img/circa.jpg';
+import Img7 from '../img/emerica.jpg';
+import Img8 from '../img/etnies.jpg';
+import Img9 from '../img/dc-1.jpg';
+import Img10 from '../img/dc-2.jpg';
+import Img11 from '../img/dc-3.jpg';
+import Img12 from '../img/dc-4.jpg';
+import Img13 from '../img/dc-5.jpg';
+import Img14 from '../img/vans-3.jpg';
 
 const ProductList=[
     
     
-    {id:0, title:"Zapatillas Nike SB 1", price:"$5.000", stock:12, image:Img1, category:"skate",description:"Las Nike SB Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento."},
-    {id:1, title:"Zapatillas Nike SB 2", price:"$6.000", stock:13, image:Img2, category:"skate",description:"Las Nike SB Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento."},
-    {id:2, title:"Zapatillas Vans 1", price:"$9.000", stock:11, image:Img3, category:"skate",description:"Las Vans RF combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento." },
+    {id:0, title:"Zapatillas Nike SB 1", price:"$5.000", stock:12, image:Img1, category:"urban",description:"Las Nike SB Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento."},
+    {id:1, title:"Zapatillas Nike SB 2", price:"$6.000", stock:13, image:Img2, category:"urban",description:"Las Nike SB Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento."},
+    {id:2, title:"Zapatillas Vans 1", price:"$9.000", stock:11, image:Img3, category:"urban",description:"Las Vans RF combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento." },
     {id:3, title:"Zapatillas Vans 2", price:"$8.500", stock:10, image:Img4, category:"skate",description:"Las Vans ED Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento." },
     {id:4, title:"Zapatillas Fallen", price:"$4.000", stock:9, image:Img5, category:"skate",description:"Las Fallen trooper combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento." },
     {id:5, title:"Zapatillas Circa", price:"$6.500", stock:20, image:Img6, category:"skate",description:"Las Circa RRR combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento." },

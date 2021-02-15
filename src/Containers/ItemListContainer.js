@@ -1,10 +1,8 @@
 import {useState, useEffect} from 'react';
 import { Typography, Spin } from 'antd';
 import ItemList from '../Components/ItemList';
-import ProductList from '../Components/sampleItems/ProductList.js';
-import './style.css'
+import ProductList from '../sampleItems/ProductList.js';
 import { LoadingOutlined } from '@ant-design/icons';
-//import {useParams} from 'react-router-dom'
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
@@ -17,7 +15,6 @@ const ItemListContainer =({greeting})=>{
 
     const [products,setProducts] = useState([]);
     const [loading, setLoading ] = useState(false);
-   // const {categoryID} = useParams();
 
     useEffect (()=>{
         setLoading(true);
@@ -31,25 +28,15 @@ const ItemListContainer =({greeting})=>{
             }, 
                        
         );
-      /*  let showProducts = ProductList.filter(producto=>{
-            if(producto.category.toString() === categoryID){
-                    return producto
-                }
-            else {return null}       
- 
-        }) 
-        console.log(showProducts)
-        return showProducts
-*/
-    },[/*categoryID*/])
+    },[])
 
 
     if (loading){
         return (
-            <>
-            <Spin indicator={antIcon} className="loading"/>
+            <div className="loading">
+            <Spin indicator={antIcon}/>
             <p>Cargando productos</p>
-            </>
+            </div>
             )
         
     } 

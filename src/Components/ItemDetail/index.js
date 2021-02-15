@@ -1,5 +1,7 @@
 
-import { Row, Col,Button } from 'antd';
+
+import { Row, Col,Button} from 'antd';
+import { LeftOutlined } from '@ant-design/icons';
 import ItemCount from '../ItemCount';
 import './style.css';
 import {useHistory} from 'react-router-dom'
@@ -9,9 +11,13 @@ const ItemDetail =({producto})=>{
 
     let history = useHistory();
 
+    const onAdd =(counter)=>{ 
+        console.log('Se agrego al carrito: Unidades: '+ counter +' '+ producto.title 
+        )}
+
     return(
         <>
-            <Button type="primary" className="mainButton" onClick={() => history.goBack()}>Volver</Button>  
+            <Button type="primary" className="mainButton backButton" onClick={() => history.goBack()}><LeftOutlined/>Volver</Button>  
             <div className="mainItemDetail">                
             <Row gutter={[40,16]} justify="center">                     
                 <Col md={8} xs={24}>                
@@ -24,7 +30,7 @@ const ItemDetail =({producto})=>{
                         <h2>{producto.price}</h2>
                         <p>{producto.description}</p>
                         </div>
-                        <ItemCount stock={producto.stock} initial={1}/>
+                        <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}/>
                     </div>
                 </Col>
             </Row>

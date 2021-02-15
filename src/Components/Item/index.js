@@ -1,6 +1,5 @@
-import './style.css'
-import { Col } from 'antd';
-import {Button} from 'antd';
+import './style.css';
+import {Col,Button} from 'antd';
 import {Link} from 'react-router-dom';
 
 const Item =({products})=>{
@@ -9,7 +8,7 @@ const Item =({products})=>{
     return(
         <>
             <Col md={6} xs={12}>  
-                <div className="productCard">
+                <div className="productCard App">
                     <img className="productsImg" alt={products.title} src={products.image}/>
                     <div className="ProductData"> 
                     <p><b>{products.title}</b><br/>
