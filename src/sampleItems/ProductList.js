@@ -13,7 +13,7 @@ import Img12 from '../img/dc-4.jpg';
 import Img13 from '../img/dc-5.jpg';
 import Img14 from '../img/vans-3.jpg';
 
-const ProductList=[
+const productList=[
     
     
     {id:0, title:"Zapatillas Nike SB 1", price:"$5.000", stock:12, image:Img1, category:"urban",description:"Las Nike SB Zoom Stefan Janoski RM combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento."},
@@ -32,7 +32,7 @@ const ProductList=[
     {id:13, title:"Zapatillas Vans 3", price:"$5.300", stock:3, image:Img14, category:"urban",description:"Las Vans Old School combinan un look minimalista con un ajuste moderno. El modelo se ha actualizado con una nueva plantilla suave y una suela exterior flexible para ofrecer un mejor contacto con la tabla desde el primer momento." },    
     ]
 
-export default ProductList
+export default productList
 
 
 

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {Spin } from 'antd';
 import ItemList from '../Components/ItemList';
-import ProductList from '../sampleItems/ProductList.js';
+import productList from '../sampleItems/productList.js';
 import { LoadingOutlined } from '@ant-design/icons';
 import {useParams, Link} from 'react-router-dom'
 
@@ -10,7 +10,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 
 const getProductByCategories = (tuvieja) => {
-    const products = ProductList.filter((producto) => {  
+    const products = productList.filter((producto) => {  
       return producto.category === tuvieja;  
     }); 
     

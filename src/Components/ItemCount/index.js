@@ -3,12 +3,14 @@ import { Button, Tooltip} from 'antd';
 import './style.css';
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
-import {ShoppingCartOutlined} from '@ant-design/icons'
+import {ShoppingCartOutlined} from '@ant-design/icons';
+
+
 
 const ItemCount =({initial,stock,onAdd}) =>{
 
     const [counter, setCounter] = useState(initial)
-    const [purchase, setPurchase] = useState(false)
+    const [purchase, setPurchase] = useState(false)    
 
     const sumarProducto=()=>{counter<stock && setCounter(counter+1)}
     const quitarProducto=()=>{counter>initial && setCounter(counter-1)}
@@ -18,9 +20,6 @@ const ItemCount =({initial,stock,onAdd}) =>{
           setPurchase(true)
 
     }    
-
-
-
 
     return(
         <>      
@@ -52,14 +51,12 @@ const ItemCount =({initial,stock,onAdd}) =>{
                 <p className="avUnits">{stock} Unidades disponibles</p>
                 {purchase === false?<Button type="primary" className="mainButton" onClick={handlerOnAdd}>+ Agregar al carrito</Button> :
                                     <Link to="/Cart">
-                                        <Button type="primary" className="goCart" onClick={handlerOnAdd}><ShoppingCartOutlined />Ir al carrito</Button>
-                                    </Link>
-                                   
-                                    }   
+                                        <Button type="primary" className="goCart" ><ShoppingCartOutlined />Ir al carrito</Button>
+                                    </Link>                                   
+                                    }                                     
             </div>
         </>
         )
-
 }
 
 export default ItemCount

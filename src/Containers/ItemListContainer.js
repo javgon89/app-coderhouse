@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react';
 import { Typography, Spin } from 'antd';
 import ItemList from '../Components/ItemList';
-import ProductList from '../sampleItems/ProductList.js';
+import productList from '../sampleItems/productList.js';
 import { LoadingOutlined } from '@ant-design/icons';
+
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
@@ -16,10 +17,12 @@ const ItemListContainer =({greeting})=>{
     const [products,setProducts] = useState([]);
     const [loading, setLoading ] = useState(false);
 
+
+
     useEffect (()=>{
         setLoading(true);
         const promesaPrueba = new Promise ((resolve,reject)=>{
-            setTimeout(()=>{resolve(ProductList)
+            setTimeout(()=>{resolve(productList)
             },1000)
         })        
         promesaPrueba.then(

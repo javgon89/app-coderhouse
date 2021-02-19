@@ -4,15 +4,22 @@ import { Row, Col,Button} from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 import ItemCount from '../ItemCount';
 import './style.css';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
+import {CartContext} from '../../Context/CartContext';
+import { useContext } from 'react';
 
 
 const ItemDetail =({producto})=>{
 
     let history = useHistory();
+    const {cart,setCart} = useContext(CartContext)
+    console.log(cart)
 
     const onAdd =(counter)=>{ 
-        console.log('Se agrego al carrito: Unidades: '+ counter +' '+ producto.title 
+        console.log('Se agrego al carrito: Unidades: '+ counter +' '+ producto.title)
+        setCart([...cart,{cantidad:counter,productName:producto.title,id:producto.id}]    
+            
+         
         )}
 
     return(

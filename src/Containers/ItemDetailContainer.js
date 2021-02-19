@@ -1,9 +1,10 @@
 import {useState,useEffect} from 'react';
 import ItemDetail from '../Components/ItemDetail/index.js';
-import ProductList from '../sampleItems/ProductList.js';
+import productList from '../sampleItems/productList.js';
 import { LoadingOutlined } from '@ant-design/icons';
 import {Spin } from 'antd';
 import {useParams} from 'react-router-dom';
+
 
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
@@ -11,18 +12,16 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 const getProductByID =(productoID)=>{
 
-        const foundProduct = ProductList.filter((product)=>
+        const foundProduct = productList.filter((product)=>
             {
              return   product.id.toString() === productoID             
-            }
-            
+            }            
         )
       
 
         const promesaProducto = new Promise ((resolve,reject)=>{
         setTimeout(()=>{ resolve(foundProduct[0]) },1000)
-        }        
-        )
+        })
         return(promesaProducto)
         
     }
