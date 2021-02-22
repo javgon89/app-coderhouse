@@ -12,7 +12,7 @@ const Item =({products})=>{
                     <img className="productsImg" alt={products.title} src={products.image}/>
                     <div className="ProductData"> 
                     <p><b>{products.title}</b><br/>
-                        {products.price}<br/>               
+                        $ {products.price}<br/>               
                         Unidades disponibles: <b>{products.stock}</b>
                     </p>
                     

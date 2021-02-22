@@ -97,3 +97,17 @@ h1,h2{
 .backButton{
   margin: 20px 0 0 30px;
 }
+
+.cartList{
+ 
+  margin: 10px 34px;
+  border: solid 1px #e2e2e2;
+  padding: 18px;
+  border-radius: 10px;
+
+}
+
+.cartImage{
+  width: 100px;
+  height: 100px;
+}
