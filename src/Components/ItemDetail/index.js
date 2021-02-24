@@ -12,23 +12,19 @@ import { useContext } from 'react';
 const ItemDetail =({producto})=>{
 
     let history = useHistory();
-    const {cart,addToCart} = useContext(CartContext)
-    console.log(cart)
+    const {addToCart} = useContext(CartContext)    
 
-    const onAdd =(counter)=>{ 
-        console.log('Se agrego al carrito: Unidades: '+ counter +' '+ producto.title)
-        addToCart([...cart,{cantidad:counter,
-                          productName:producto.title,
-                          id:producto.id,
-                          image:producto.image,
-                          price:producto.price
-                          }]  
-                      
+    const onAdd =(counter)=>{         
+        addToCart({ cantidad:counter,
+                      productName:producto.title,
+                      id:producto.id,
+                      image:producto.image,
+                      price:producto.price
+                    }                    
         )
-        console.log('viendo id del producto agregado: '+producto.id)  
+          
         }
-                          
-
+                        
 
     return(
         <>

@@ -12,16 +12,15 @@ const Cart =()=>{
 
 
     let history = useHistory();
-    const {cart} = useContext(CartContext)    
-
-  
+    const {cart} = useContext(CartContext)   
     
 
     return(
         <>  
             <Button type="primary" className="mainButton backButton" onClick={() => history.goBack()}><LeftOutlined/>Volver</Button> 
             <div>
-                <Title className="customFont"> Estas Viendo tu carrito</Title>               
+                <Title className="customFont"> Estas Viendo tu carrito</Title>   
+                <p className="totalPrice">Precio total:</p>             
             </div>    
             <div>
             {cart.map(e=> <ItemInCart e={e} key={e.id}/>)          

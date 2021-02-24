@@ -111,3 +111,8 @@ h1,h2{
   width: 100px;
   height: 100px;
 }
+
+.totalPrice{
+  text-align: right;
+  margin-right: 40px;
+}
