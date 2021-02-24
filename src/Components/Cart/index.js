@@ -12,8 +12,7 @@ const Cart =()=>{
 
 
     let history = useHistory();
-    const {cart} = useContext(CartContext)   
-    
+    const {cart} = useContext(CartContext)       
 
     return(
         <>  

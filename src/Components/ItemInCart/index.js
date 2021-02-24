@@ -1,8 +1,9 @@
-  
+import {CartContext} from '../../Context/CartContext';
+import { useContext } from 'react'; 
 
  const ItemInCart=({e})=>{    
     
-    const totalProduct = e.price * e.cantidad   
+    const {totalProduct} = useContext(CartContext) 
 
        return(              
                         
