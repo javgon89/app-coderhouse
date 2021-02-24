@@ -24,13 +24,18 @@ export const CartProvider =({children}) => {
         }
       };
  
-    const totalProduct = e => e.price * e.cantidad 
-      
+      const costoTotal = () => {
+        const cost = cart.reduce(
+            (acumulador, item) => acumulador + item.price * item.count, 0
+        )
+        return cost;        
+      }
 
+     
 
 
     return(
-        <CartContext.Provider value={{cart,addToCart,totalProduct}}>
+        <CartContext.Provider value={{cart,addToCart,costoTotal}}>
             {children}
         </CartContext.Provider>
     )

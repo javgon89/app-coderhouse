@@ -22,8 +22,7 @@ const ItemDetail =({producto})=>{
                       price:producto.price
                     }                    
         )
-          
-        }
+    }
                         
 
     return(
