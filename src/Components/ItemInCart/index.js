@@ -1,5 +1,7 @@
 import {CartContext} from '../../Context/CartContext';
 import { useContext } from 'react'; 
+import {Button} from 'antd';
+import{DeleteOutlined} from '@ant-design/icons'
 
  const ItemInCart=({e})=>{    
     
@@ -13,7 +15,7 @@ import { useContext } from 'react';
                         <p>Producto: <b>{e.productName}</b></p>   
                         <p>Precio total: <b>$ {costItem(e)}</b></p>                        
                         <p>Unidades: <b>{e.cantidad}</b></p>                            
-                        <button onClick={()=> removeItem(e.id)}>Eliminar</button>
+                        <Button className="trashButton" onClick={()=> removeItem(e.id)}><DeleteOutlined /> Quitar del carrito</Button>
                         </div>)
        }
        
