@@ -1,6 +1,6 @@
 import {CartContext} from '../../Context/CartContext';
 import { useContext } from 'react'; 
-import {Button} from 'antd';
+import {Button,Row,Col} from 'antd';
 import{DeleteOutlined} from '@ant-design/icons'
 
  const ItemInCart=({e})=>{    
@@ -8,15 +8,23 @@ import{DeleteOutlined} from '@ant-design/icons'
     const {costItem,removeItem} = useContext(CartContext) 
     
 
-       return(              
-                        
-                        <div  className="cartList">                         
-                        <img alt={e.productName} src={e.image} className="cartImage"/>
-                        <p>Producto: <b>{e.productName}</b></p>   
-                        <p>Precio total: <b>$ {costItem(e)}</b></p>                        
-                        <p>Unidades: <b>{e.cantidad}</b></p>                            
-                        <Button className="trashButton" onClick={()=> removeItem(e.id)}><DeleteOutlined /> Quitar del carrito</Button>
-                        </div>)
+       return(      
+          
+         <div  className="cartList">  
+            <Row gutter={[16, 16]}>
+                  <Col className="gutter-row" md={3}>       
+                  <img alt={e.productName} src={e.image} className="cartImage"/>
+                  </Col>
+                  <Col className="gutter-row" md={12}>    
+                  <p>Producto: <b>{e.productName}</b></p>   
+                  <p>Precio total: <b>$ {costItem(e)}</b></p>                        
+                  <p>Unidades: <b>{e.cantidad}</b></p> 
+                  </Col>  
+                  <Col className="gutter-row" md={9}>                          
+               <Button className="trashButton" onClick={()=> removeItem(e.id)}><DeleteOutlined /> Quitar del carrito</Button>
+               </Col> 
+            </Row> 
+         </div>)
        }
        
   export default ItemInCart     

@@ -13,8 +13,6 @@ const NavBar = () =>{
         
     <>
         <Header>
-        
-
                 <Link to={'/'}>    
                     <div className="logo" >
                         Jav Commerce
@@ -22,7 +20,7 @@ const NavBar = () =>{
                 </Link>  
             <Menu theme="dark" mode="horizontal">               
                 <Menu.Item key="3">
-                    <Link to="/Cart"><CartWidget/></Link>
+                    <CartWidget/>
                 </Menu.Item>
                 <Menu.Item key="1" className="customMenu"> 
                     <CategoryDropdown/>

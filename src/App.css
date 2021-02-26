@@ -108,7 +108,7 @@ h1,h2{
   float: right !important;  
   border-radius: 7px !important;
   color: #ff0000 !important;
-  bottom: 30px;
+  
 }
 
 .trashButton:hover{
@@ -120,17 +120,27 @@ h1,h2{
  
   margin: 10px 34px;
   border: solid 1px #e2e2e2;
-  padding: 18px;
+  padding: 18px 18px 0 18px;
   border-radius: 10px;
 
 }
 
 .cartImage{
-  width: 100px;
-  height: 100px;
+  width: 100%; 
 }
 
 .totalPrice{  
   font-size: 18px;
   margin-left: 36px;
+}
+
+.textCentered{
+  text-align: center;
+}
+
+.emptyCart{
+  display: block;
+  text-align: center;
+  margin: 100px auto;
+
 }

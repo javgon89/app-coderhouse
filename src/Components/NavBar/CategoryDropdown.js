@@ -32,7 +32,6 @@ const menu=(
 const CategoryDropdown = ()=> {
     return(
 
-
         <Dropdown overlay={menu}>
              <div className="ant-dropdown-link" onClick={e => e.preventDefault()}>Categorías <DownOutlined /></div>
         </Dropdown>
