@@ -29,7 +29,7 @@ const App=()=> {
             <ItemCategoryContainer greeting="Bienvenidos a Categoría"/> 
             </Route> 
             
-            <Route exact path="/product/:producteID">  
+            <Route exact path="/product/:productID">  
               <ItemDetailContainer/>   
             </Route>
 
