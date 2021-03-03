@@ -25,10 +25,11 @@ const ItemDetailContainer =()=>{
 
         producto.get().then((value)=>{
             let aux = value.data();
+            console.log(aux)
             setProducto(aux);            
             setLoading(false); 
-            })
-     
+            })            
+            console.log(productID)
 
       }, [productID]);
 
@@ -44,7 +45,7 @@ const ItemDetailContainer =()=>{
             ) : (
 
             <>
-                <ItemDetail producto={producto}/>           
+                <ItemDetail producto={producto} id={productID}/>           
             </>
             )}
         </>
