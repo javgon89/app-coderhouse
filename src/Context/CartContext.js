@@ -46,6 +46,7 @@ export const CartProvider =({children}) => {
         setCart(remove)         
       }
  
+      const clearCart = () => setCart([])
 
 
     return(
@@ -54,7 +55,8 @@ export const CartProvider =({children}) => {
                                       addToCart,
                                       costoTotal,
                                       costItem,
-                                      removeItem}}>
+                                      removeItem,
+                                      clearCart}}>
             {children}
         </CartContext.Provider>
     )

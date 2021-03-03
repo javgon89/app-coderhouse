@@ -28,35 +28,25 @@ const ItemListContainer =({greeting})=>{
         setLoading(true);
 
         productList.get().then((value)=>{
-            let aux = value.docs.map(e => {    
-            /*const categotyCollection = */
-            const categoryCollection = dataBase.collection('Category');
-            
+            let aux = value.docs.map(e => {                
+            const categoryCollection = dataBase.collection('Category');            
             console.log(e.data().categoryId);
 
             categoryCollection.doc(e.data().categoryId).get()
             .then(
-                value=>
-                console.log(value.data())
+                value=>{
+                    console.log(value.data())                       
+                }
+
             )
                return {...e.data(),id:e.id, category:e.data().categoryId}
             })
             
             setProducts(aux)
             setLoading(false)
-            console.log(aux)
+            //console.log(aux)
         })
 
-       /* const promesaPrueba = new Promise ((resolve,reject)=>{
-            setTimeout(()=>{resolve(productList)
-            },1000)
-        })        
-        promesaPrueba.then(
-            (res)=>{setProducts(res);
-            setLoading(false)
-            },
-        );
-        */
 
     },[])
 

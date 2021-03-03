@@ -16,10 +16,10 @@ import{DeleteOutlined} from '@ant-design/icons'
                   <img alt={e.productName} src={e.image} className="cartImage"/>
                   </Col>
                   <Col className="gutter-row" md={12}>    
-                  <p>Producto: <b>{e.productName}</b></p>   
-                  <p>Precio unitario: <b>{e.price}</b></p>                                           
-                  <p>Unidades: <b>{e.cantidad}</b></p> 
-                  <p>Id del producto: <b>{e.id}</b></p> 
+                  <p>Producto: <b>{e.productName}</b></p>  
+                  <p>Id del producto: <b>{e.id}</b></p>  
+                  <p>Precio unitario: <b>${e.price}</b></p>                                           
+                  <p>Unidades: <b>{e.cantidad}</b></p>                   
                   <p>Precio total: <b>$ {costItem(e)}</b></p>  
                   </Col>  
                   <Col className="gutter-row" md={9}>                          
