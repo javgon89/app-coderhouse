@@ -27,29 +27,49 @@ const ItemListContainer =({greeting})=>{
 
         setLoading(true);
 
-        productList.get().then((value)=>{
-            let aux = value.docs.map(e => {                
-            const categoryCollection = dataBase.collection('Category');            
-            console.log(e.data().categoryId);
+        productList.get().then(async (value) => {
+            //  Usando Promise.all() para esperar que todos los metodos asincronicos se terminen de ejecutar.
+            let aux = await Promise.all(value.docs.map( async (product) => {
 
-            categoryCollection.doc(e.data().categoryId).get()
-            .then(
-                value=>{
-                    console.log(value.data())                       
-                }
+                // Llamar otra vez a la bd tomando la categoriaID del element
+                const CategoriasCollection = dataBase.collection('Category');
 
-            )
-               return {...e.data(),id:e.id, category:e.data().categoryId}
-            })
-            
-            setProducts(aux)
-            setLoading(false)
-            //console.log(aux)
+                // Tomamos el documento la id de la categoria
+                let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()
+                console.log(auxCategorias.data())
+                return { ...product.data(), id: product.id,category:auxCategorias.data().name }
+            }))
+            console.log(aux)
+            setProducts(aux);
         })
 
 
     },[])
+/*
+useEffect(() => {
+        // conexion a la bd
+        const baseDeDatos = getFirestore();
 
+        // Guardamos la referencia de la coleccion que queremos tomar
+        const itemCollection = baseDeDatos.collection('Items');
+
+        // Tomando los datos
+        itemCollection.get().then(async (value) => {
+            //  Usando Promise.all() para esperar que todos los metodos asincronicos se terminen de ejecutar.
+            let aux = await Promise.all(value.docs.map( async (product) => {
+
+                // Llamar otra vez a la bd tomando la categoriaID del element
+                const CategoriasCollection = baseDeDatos.collection('Categorias');
+
+                // Tomamos el documento la id de la categoria
+                let auxCategorias = await CategoriasCollection.doc(product.data().categoryID).get()
+                return { ...product.data(), categoria:auxCategorias.data().nombre }
+            }))
+            console.log(aux)
+            setProductos(aux);
+        })
+    }, [])
+*/
 
     if (loading){
         return (
