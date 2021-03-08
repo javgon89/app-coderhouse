@@ -1,4 +1,5 @@
 import {createContext,useState} from 'react';
+import {getFirestore} from '../firebase';
 
 export const CartContext = createContext();
 
@@ -13,8 +14,7 @@ export const CartProvider =({children}) => {
             if (item.id === itemCount.id) {
               return { ...item, cantidad: itemCount.cantidad + item.cantidad };             
             }
-            return item;
-            
+            return item;            
           });
           setCart(newCartItem);
           if(cart===[]){
@@ -24,10 +24,7 @@ export const CartProvider =({children}) => {
             setCart(state => {
             return [...state, itemCount];
           });
-
         }
- 
-
       };
 
       const costoTotal = () => {           
@@ -38,8 +35,6 @@ export const CartProvider =({children}) => {
       const costItem =(item)=> item.price * item.cantidad;
 
       const cantidadProducts = cart.reduce((acumulador,item) =>acumulador + item.cantidad,0)
-
-
       
       const removeItem =(id)=>{                     
         const remove = cart.filter(item => item.id !== id);
@@ -47,6 +42,25 @@ export const CartProvider =({children}) => {
       }
  
       const clearCart = () => setCart([])
+
+      const[name,setName] =useState('');
+      const[mail,setMail] =useState('');
+      const[phone,setPhone] =useState('');
+
+      const[purchaseDone,setPurchaseDone] =useState(false)
+
+      const endPurchase= ()=>{
+        console.log('Compra finalizada')
+        const purchaseData = {items: {...cart}, total: costoTotal(),buyer: {name:name, mail:mail, phone:phone}}          
+
+        const dataBase = getFirestore();
+        const orderCollection = dataBase.collection('Orders');
+        orderCollection.add(purchaseData).then((value) =>{
+          console.log(value.id)
+        setPurchaseDone(true)  
+        });
+        console.log(purchaseData)
+      }
 
 
     return(
@@ -56,7 +70,12 @@ export const CartProvider =({children}) => {
                                       costoTotal,
                                       costItem,
                                       removeItem,
-                                      clearCart}}>
+                                      clearCart,
+                                      endPurchase,
+                                      setName,
+                                      setMail,
+                                      setPhone,
+                                      purchaseDone}}>
             {children}
         </CartContext.Provider>
     )

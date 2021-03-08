@@ -9,15 +9,14 @@ import {CartContext} from '../../Context/CartContext';
 import { useContext } from 'react';
 
 
-const ItemDetail =({producto,id})=>{
+const ItemDetail =({producto,id,categoryName})=>{
 
     let history = useHistory();
     const {addToCart} = useContext(CartContext)    
 
     const onAdd =(counter)=>{         
         addToCart({ cantidad:counter,
-                      productName:producto.title,
-                      category:producto.category,
+                      productName:producto.title,                      
                       id:id,
                       image:producto.image,
                       price:producto.price
@@ -39,7 +38,7 @@ const ItemDetail =({producto,id})=>{
                         <div className="textLeft">
                         <h1>{producto.title}</h1>
                         <h2>$ {producto.price}</h2>
-                        <h2>Categoria: {producto.categoryId}</h2>
+                        <h2>Categoria: {categoryName}</h2>
                         <p>Id del producto:{id}</p>
                         <p>{producto.description}</p>
                         </div>

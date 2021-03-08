@@ -18,7 +18,6 @@ const ItemCount =({initial,stock,onAdd}) =>{
     const handlerOnAdd=()=>{
           onAdd(counter);
           setPurchase(true)
-
     }    
 
     return(

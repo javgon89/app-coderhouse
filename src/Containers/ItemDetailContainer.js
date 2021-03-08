@@ -24,12 +24,11 @@ const ItemDetailContainer =()=>{
         const producto = productList.doc(productID);
 
         producto.get().then((value)=>{
-            let aux = value.data();
-            console.log(aux)
+            let aux = value.data();            
             setProducto(aux);            
-            setLoading(false); 
+            setLoading(false);             
             })            
-            console.log(productID)
+            
 
       }, [productID]);
 

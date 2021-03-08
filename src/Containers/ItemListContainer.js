@@ -18,11 +18,7 @@ const ItemListContainer =({greeting})=>{
 
     const [products,setProducts] = useState([]);
     const [loading, setLoading ] = useState(false);
-    const { categoryID } = useParams();  
-
-
-
-    
+    const { categoryID } = useParams();      
 
     /*    const dataBase = getFirestore();
         const productList = dataBase.collection('Productos')
@@ -46,7 +42,6 @@ const ItemListContainer =({greeting})=>{
             setProducts(aux);
         })
 
-
     },[])*/
 
     useEffect(() => {
@@ -62,13 +57,10 @@ const ItemListContainer =({greeting})=>{
             if(value.size === 0){
                 console.log('No existen resultados');
             }
-            let aux = await Promise.all(value.docs.map( async (product) => {
-                // Llamar otra vez a la bd tomando la categoriaID del element
-                const CategoriasCollection = dataBase.collection('Category');
-                // Tomamos el documento la id de la categoria
+            let aux = await Promise.all(value.docs.map( async (product) => {              
+                const CategoriasCollection = dataBase.collection('Category'); 
                 let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()
                 console.log(auxCategorias.data())
-                
                 return { ...product.data(), id: product.id,categoryName:auxCategorias.data().name }
 
             }))

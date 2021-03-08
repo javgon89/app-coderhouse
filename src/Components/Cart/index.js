@@ -6,9 +6,12 @@ import { CartContext } from '../../Context/CartContext';
 import ItemInCart from '../ItemInCart';
 import {Link} from 'react-router-dom';
 
+
+
 const { Title } = Typography;
 
 const Cart =()=>{
+
 
 
     let history = useHistory();
@@ -32,9 +35,13 @@ const Cart =()=>{
                                     </Link>
                                     </div>
 
-                              : cart.map(e=> <ItemInCart e={e} key={e.id}/>)}          
+                              : cart.map(e=> <ItemInCart e={e} key={e.id}/>)}    
+                    
             </div>
-            }
+            }            
+            <Link to={'/Checkout'}>
+            <Button type="primary" className="mainButton checkoutButton">Ir a checkout</Button>  
+            </Link>
         </>
     )
 }
