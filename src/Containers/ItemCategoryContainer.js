@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+/*import {useState, useEffect} from 'react';
 import {Spin } from 'antd';
 import ItemList from '../Components/ItemList';
 //import productList from '../sampleItems/productList.js';
@@ -22,7 +22,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
     });  
     return promesaPrueba;  
   };*/
-
+/*
 
   const ItemCategoryContainer = () => {
     const [products, setProducts] = useState([]);  
@@ -50,7 +50,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
         setLoading(false); 
         
         
-    */ });  
+  });  
     }, [categoryID]);
 
 
@@ -71,4 +71,4 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
     )
 }
 
-export default ItemCategoryContainer
+export default ItemCategoryContainer   */

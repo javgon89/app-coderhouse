@@ -3,7 +3,8 @@ import { Typography, Spin } from 'antd';
 import ItemList from '../Components/ItemList';
 //import productList from '../sampleItems/productList.js';
 import { LoadingOutlined } from '@ant-design/icons';
-import {getFirestore} from '../firebase'
+import {getFirestore} from '../firebase';
+import {useParams} from 'react-router-dom';
 
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
@@ -17,12 +18,13 @@ const ItemListContainer =({greeting})=>{
 
     const [products,setProducts] = useState([]);
     const [loading, setLoading ] = useState(false);
+    const { categoryID } = useParams();  
 
 
 
-    useEffect (()=>{
+    
 
-        const dataBase = getFirestore();
+    /*    const dataBase = getFirestore();
         const productList = dataBase.collection('Productos')
 
         setLoading(true);
@@ -39,37 +41,44 @@ const ItemListContainer =({greeting})=>{
                 console.log(auxCategorias.data())
                 return { ...product.data(), id: product.id,category:auxCategorias.data().name }
             }))
+            setLoading(false)
             console.log(aux)
             setProducts(aux);
         })
 
 
-    },[])
-/*
-useEffect(() => {
-        // conexion a la bd
-        const baseDeDatos = getFirestore();
+    },[])*/
 
-        // Guardamos la referencia de la coleccion que queremos tomar
-        const itemCollection = baseDeDatos.collection('Items');
-
-        // Tomando los datos
-        itemCollection.get().then(async (value) => {
-            //  Usando Promise.all() para esperar que todos los metodos asincronicos se terminen de ejecutar.
+    useEffect(() => {
+        const dataBase = getFirestore();
+        let productList;
+        setLoading(true);
+        if(categoryID){
+            productList = dataBase.collection('Productos').where('categoryName', '==', categoryID);
+        }else{
+            productList = dataBase.collection('Productos');
+        }
+        productList.get().then(async (value) => {
+            if(value.size === 0){
+                console.log('No existen resultados');
+            }
             let aux = await Promise.all(value.docs.map( async (product) => {
-
                 // Llamar otra vez a la bd tomando la categoriaID del element
-                const CategoriasCollection = baseDeDatos.collection('Categorias');
-
+                const CategoriasCollection = dataBase.collection('Category');
                 // Tomamos el documento la id de la categoria
-                let auxCategorias = await CategoriasCollection.doc(product.data().categoryID).get()
-                return { ...product.data(), categoria:auxCategorias.data().nombre }
+                let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()
+                console.log(auxCategorias.data())
+                
+                return { ...product.data(), id: product.id,categoryName:auxCategorias.data().name }
+
             }))
             console.log(aux)
-            setProductos(aux);
-        })
-    }, [])
-*/
+            setLoading(false);
+            setProducts(aux);
+        });
+    }, [categoryID]);
+
+  
 
     if (loading){
         return (
@@ -87,7 +96,6 @@ useEffect(() => {
             <ItemList products={products} />          
         </>
     )
-
-}
+    }
 
 export default ItemListContainer
