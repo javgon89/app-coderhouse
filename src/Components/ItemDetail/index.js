@@ -38,8 +38,7 @@ const ItemDetail =({producto,id,categoryName})=>{
                         <div className="textLeft">
                         <h1>{producto.title}</h1>
                         <h2>$ {producto.price}</h2>
-                        <h2>Categoria: {categoryName}</h2>
-                        <p>Id del producto:{id}</p>
+                        <p>Categoria: {producto.categoryName}</p>                        
                         <p>{producto.description}</p>
                         </div>
                         <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}/>

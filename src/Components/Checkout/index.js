@@ -1,11 +1,37 @@
-import {useContext} from 'react';
+import {useContext,useState} from 'react';
 import { CartContext } from '../../Context/CartContext';
 import { Form, Input, Button} from 'antd';
+import {getFirestore} from '../../firebase';
+import {Link} from 'react-router-dom'
 
 
 const Checkout =()=>{
 
-    const {costoTotal,setName,setMail,setPhone,endPurchase,purchaseDone} = useContext(CartContext)  
+    const[name,setName] =useState('');
+    const[mail,setMail] =useState('');
+    const[phone,setPhone] =useState('');
+    const[ordenId,setordenId] =useState('');
+
+    const[purchaseDone,setPurchaseDone] =useState(false)
+
+    const endPurchase= ()=>{
+      console.log('Compra finalizada')
+      const purchaseData = {items: {...cart}, total: costoTotal(),buyer: {name:name, mail:mail, phone:phone}}          
+
+      const dataBase = getFirestore();
+      const orderCollection = dataBase.collection('Orders');
+      orderCollection.add(purchaseData).then((value) =>{
+        console.log(value.id)
+      setPurchaseDone(true) 
+      setordenId(value.id) 
+      clearCart()
+      });
+      console.log(purchaseData)}
+
+
+    const {cart,costoTotal,clearCart} = useContext(CartContext)  
+
+
 
     return(
         <div className="margincheckout">
@@ -32,10 +58,15 @@ const Checkout =()=>{
         </Form>
         </div>
          : <div>
-             <h1>Felicitaciones su compra ha sido realziada con éxito</h1>
-             <p>El código de su operación es:</p>   
+             <h1>¡Felicitaciones! su compra ha sido realizada con éxito</h1>
+             <p><b>{name}</b> gracias por tu compra. Enviaremos un mail a <b>{mail}</b> con todos los detalles de compra y envío.</p>
+             <p>El código de su operación es: <b>{ordenId}</b></p>      
+             <Link to={'/'}>      
+               <Button type="primary">Ir al home</Button>    
+             </Link>
             </div> 
-             }
+            
+            }
 
         </div>
     )

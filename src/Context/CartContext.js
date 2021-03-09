@@ -1,5 +1,4 @@
 import {createContext,useState} from 'react';
-import {getFirestore} from '../firebase';
 
 export const CartContext = createContext();
 
@@ -43,24 +42,7 @@ export const CartProvider =({children}) => {
  
       const clearCart = () => setCart([])
 
-      const[name,setName] =useState('');
-      const[mail,setMail] =useState('');
-      const[phone,setPhone] =useState('');
 
-      const[purchaseDone,setPurchaseDone] =useState(false)
-
-      const endPurchase= ()=>{
-        console.log('Compra finalizada')
-        const purchaseData = {items: {...cart}, total: costoTotal(),buyer: {name:name, mail:mail, phone:phone}}          
-
-        const dataBase = getFirestore();
-        const orderCollection = dataBase.collection('Orders');
-        orderCollection.add(purchaseData).then((value) =>{
-          console.log(value.id)
-        setPurchaseDone(true)  
-        });
-        console.log(purchaseData)
-      }
 
 
     return(
@@ -70,12 +52,8 @@ export const CartProvider =({children}) => {
                                       costoTotal,
                                       costItem,
                                       removeItem,
-                                      clearCart,
-                                      endPurchase,
-                                      setName,
-                                      setMail,
-                                      setPhone,
-                                      purchaseDone}}>
+                                      clearCart
+                                      }}>
             {children}
         </CartContext.Provider>
     )

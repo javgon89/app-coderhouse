@@ -59,8 +59,7 @@ const ItemListContainer =({greeting})=>{
             }
             let aux = await Promise.all(value.docs.map( async (product) => {              
                 const CategoriasCollection = dataBase.collection('Category'); 
-                let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()
-                console.log(auxCategorias.data())
+                let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()               
                 return { ...product.data(), id: product.id,categoryName:auxCategorias.data().name }
 
             }))
