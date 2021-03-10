@@ -8,6 +8,7 @@ import ItemListContainer from './Containers/ItemListContainer';
 import {BrowserRouter, Route,Switch} from 'react-router-dom'
 import Cart from './Components/Cart';
 import { CartProvider } from './Context/CartContext';
+import { ProductProvider } from './Context/productsContext';
 import Checkout from './Components/Checkout';
 
 
@@ -16,15 +17,15 @@ const App=()=> {
   return (
 
     <div >
-      <CartProvider>
+      <CartProvider>     <ProductProvider>
         <BrowserRouter>
           <NavBar/>      
           <Switch>
-            
+     
             <Route exact path="/">   
               <ItemListContainer  greeting="Bienvenidos a JavCommerce"/> 
             </Route> 
-
+        
             <Route exact path="/category/:categoryID">   
             <ItemListContainer/> 
             </Route> 
@@ -43,6 +44,7 @@ const App=()=> {
 
           </Switch>      
         </BrowserRouter>
+        </ProductProvider>
       </CartProvider>
     </div>
 

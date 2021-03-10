@@ -1,10 +1,10 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect,/*useContext*/} from 'react';
 import { Typography, Spin } from 'antd';
 import ItemList from '../Components/ItemList';
-//import productList from '../sampleItems/productList.js';
 import { LoadingOutlined } from '@ant-design/icons';
 import {getFirestore} from '../firebase';
 import {useParams} from 'react-router-dom';
+//import { ProductContext } from '../Context/productsContext';
 
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
@@ -15,6 +15,7 @@ const { Title } = Typography;
 
 const ItemListContainer =({greeting})=>{
 
+    //const {addProducts} = useContext(ProductContext)  
 
     const [products,setProducts] = useState([]);
     const [loading, setLoading ] = useState(false);
@@ -62,8 +63,7 @@ const ItemListContainer =({greeting})=>{
                 let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()               
                 return { ...product.data(), id: product.id,categoryName:auxCategorias.data().name }
 
-            }))
-            console.log(aux)
+            }))         
             setLoading(false);
             setProducts(aux);
         });
@@ -83,7 +83,8 @@ const ItemListContainer =({greeting})=>{
 
     return(
         <>
-            <Title className="customFont">{greeting}</Title>           
+            <Title className="customFont">{greeting}</Title>      
+            {/*<button onClick={()=> addProducts()}>agregar products</button>*/}
             <ItemList products={products} />          
         </>
     )
