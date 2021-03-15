@@ -1,6 +1,6 @@
 import {Button,Typography} from 'antd';
 import {useContext} from 'react';
-import{LeftOutlined,ClearOutlined} from '@ant-design/icons';
+import{LeftOutlined,ClearOutlined,DollarCircleOutlined} from '@ant-design/icons';
 import {useHistory} from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 import ItemInCart from '../ItemInCart';
@@ -40,7 +40,7 @@ const Cart =()=>{
             </div>
             }            
             <Link to={'/Checkout'}>
-            <Button type="primary" className="mainButton checkoutButton">Ir a checkout</Button>  
+                <Button type="primary" className="mainButton checkoutButton"><DollarCircleOutlined /> Ir al checkout</Button>  
             </Link>
         </>
     )

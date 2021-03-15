@@ -12,6 +12,7 @@ import { ProductProvider } from './Context/productsContext';
 import Checkout from './Components/Checkout';
 
 
+
 const App=()=> {
   
   return (
@@ -41,6 +42,11 @@ const App=()=> {
             <Route exact path="/Checkout">  
               <Checkout/>
             </Route>
+
+            <Route exact path="/Checkout">  
+              <Checkout/>
+            </Route>
+
 
           </Switch>      
         </BrowserRouter>

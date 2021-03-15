@@ -152,3 +152,8 @@ h1,h2{
 .margincheckout{
 margin: 40px;
 }
+
+.errorMessage{
+  font-weight: 700;
+  color: #ff0000;
+}
