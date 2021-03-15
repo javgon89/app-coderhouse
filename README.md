@@ -13,3 +13,10 @@ Una vez cumplido el proceso, el usuario peude vovler al home
 ### Ant Design
 Se utilizó Ant design  como librería de estilos e íconos. 
 
+## Datos adicionales
+
+El proyecto cuenta a  modo de prueba y experimentación con un productContext.js, el cual utilicé para agregar varios de los productos del sitio.
+A falta de un back office del cual deberían poder ageragrse dichos productos por medio de completar los forms pertinentes, utilicé un botón en intelListContainer (El cual se encuentra comentado de momento) para accionar la función addProducts().
+
+
+
