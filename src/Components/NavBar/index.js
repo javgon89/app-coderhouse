@@ -15,7 +15,7 @@ const NavBar = () =>{
         <Header>
                 <Link to={'/'}>    
                     <div className="logo" >
-                        Jav Commerce
+                        JaviCommerce
                     </div> 
                 </Link>  
             <Menu theme="dark" mode="horizontal">               
