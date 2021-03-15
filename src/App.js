@@ -24,7 +24,7 @@ const App=()=> {
           <Switch>
      
             <Route exact path="/">   
-              <ItemListContainer  greeting="Bienvenidos a JavCommerce"/> 
+              <ItemListContainer  greeting="Bienvenidos a JaviCommerce"/> 
             </Route> 
         
             <Route exact path="/category/:categoryID">   
